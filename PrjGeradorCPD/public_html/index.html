@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -19,15 +20,70 @@
   </head>
   <body>
     
-    <div class="container">
-        <h1>Gerador de CPF</h1>
+    <div class="container">    
         <div class="panel-group">
-          <div class="panel panel-default">
-            <div class="panel-body">Panel Content</div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-body">Panel Content</div>
-          </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <center><h1>Gerador de CPF</h1></center>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel-group">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">Gerar digitos verificador</div>
+                      <div class="panel-body">
+                          <form>
+                              <div class="form-group">
+                                  <input class="form-control" type="text" maxlength="9">                          
+                              </div>
+                              <button type="submit" class="btn btn-success pull-right"><i class="fa fa-id-card"></i> Gerar</button>
+                              
+                          </form>
+                      </div>
+                  </div>
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">Resultado</div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-group">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">Gerar CPF randomicamente</div>
+                      <div class="panel-body">
+                          <form>
+                              <div class="form-group">
+                                  <input class="form-control" type="text" maxlength="9">                          
+                              </div>
+                              <button type="submit" class="btn btn-success pull-right"><i class="fa fa-id-card"></i> Gerar</button>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">Resultado</div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel-group">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">Validador seu CPF</div>
+                      <div class="panel-body">
+                          <form>
+                              <div class="form-group">
+                                  <input class="form-control" type="text" maxlength="9">                          
+                              </div>                             
+                              <button type="submit" class="btn btn-success pull-right"><i class="fa fa-id-card"></i> Validar</button>                            
+                          </form>
+                      </div>
+                  </div>
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">Resultado</div>
+                  </div>
+                </div>
+            </div>            
         </div>
     </div>
     <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
