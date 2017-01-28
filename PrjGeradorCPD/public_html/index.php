@@ -19,6 +19,33 @@
     <![endif]-->
   </head>
   <body>
+    <?php 
+    //var_dump($_POST); 
+    include_once './class/gerar.class.php';
+    
+    if(!empty($_POST["gerarcpf"])){        
+        $resultado = new CPF;
+        $resultado->gerarDigitos($_POST["gerarcpf"]);
+        $cpfcompleto = $resultado->cpf;
+    }
+    else{
+        $cpfcompleto = 'Informe nove digitos';
+    }
+    
+    if(!empty($_POST["aleatoriocpf"])){
+        $cpfAleatorio = rand(1,9);
+        for ($i=1; $i <= 8; $i++){        
+            $aleatorio = rand(0,9);   
+            $cpfAleatorio .= $aleatorio;
+        }
+        $resultado = new CPF;
+        $resultado->gerarDigitos($cpfAleatorio);
+        $cpfResultAleatorio = $resultado->cpf;
+    }
+    else {
+        $cpfResultAleatorio = 'Clique no botão';
+    }
+    ?>
     
     <div class="container">    
         <div class="panel-group">
@@ -34,9 +61,9 @@
                   <div class="panel panel-primary">
                       <div class="panel-heading">Gerar digitos verificador</div>
                       <div class="panel-body">
-                          <form>
+                          <form method="POST">
                               <div class="form-group">
-                                  <input class="form-control" type="text" maxlength="9">                          
+                                  <input class="form-control" name="gerarcpf" type="text" maxlength="9">                          
                               </div>
                               <button type="submit" class="btn btn-success pull-right"><i class="fa fa-id-card"></i> Gerar</button>
                               
@@ -44,7 +71,7 @@
                       </div>
                   </div>
                   <div class="panel panel-primary">
-                    <div class="panel-heading">Resultado</div>
+                    <div class="panel-heading">Resultado: <?php echo "$cpfcompleto"; ?></div>
                   </div>
                 </div>
             </div>
@@ -53,23 +80,20 @@
                   <div class="panel panel-primary">
                       <div class="panel-heading">Gerar CPF randomicamente</div>
                       <div class="panel-body">
-                          <form>
-                              <div class="form-group">
-                                  <input class="form-control" type="text" maxlength="9">                          
-                              </div>
-                              <button type="submit" class="btn btn-success pull-right"><i class="fa fa-id-card"></i> Gerar</button>
+                          <form method="POST">
+                              <button type="submit" class="btn btn-success btn-lg btn-block" value="gerar" name="aleatoriocpf"><i class="fa fa-id-card"></i> Gerar</button>
                           </form>
                       </div>
                   </div>
                   <div class="panel panel-primary">
-                    <div class="panel-heading">Resultado</div>
+                    <div class="panel-heading">Resultado: <?php echo "$cpfResultAleatorio"; ?></div>
                   </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel-group">
                   <div class="panel panel-primary">
-                      <div class="panel-heading">Validador seu CPF</div>
+                      <div class="panel-heading">Valide seu CPF</div>
                       <div class="panel-body">
                           <form>
                               <div class="form-group">
